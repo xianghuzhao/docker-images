@@ -12,8 +12,9 @@ jobs:
       - name: build-push
         uses: docker/build-push-action@v1
         with:
+          repository: xianghuzhao/elasticsearch-head
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          path: ./elasticsearch-head
-          repository: xianghuzhao/elasticsearch-head
+          path: elasticsearch-head
+          dockerfile: elasticsearch-head/Dockerfile
           tags: latest
